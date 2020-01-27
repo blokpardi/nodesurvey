@@ -16,4 +16,8 @@ module.exports = app => {
     })
   );
   app.get('/auth/msid/callback', passport.authenticate('windowslive'));
+
+  app.get('/api/current_user', (req, res) =>{
+    res.send(req.user);
+  });
 };
